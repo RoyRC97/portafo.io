@@ -1,0 +1,132 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    display: flex;
+    flex-direction: column; /* para que los rectangulos aparezcan debajo */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+/* Estilo para la tarjeta de bienvenida principal */
+.welcome-box {
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 520px;
+    text-align: center;
+    position: relative; /* Referencia para los rectángulos */
+    overflow: hidden;   /* Asegura que el contenido no se desborde */
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* Contenedor que alinea los tres elementos superiores */
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Bloque de INFORMACIÓN DE CONTACTO */
+.contact-info {
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* IMAGEN DEL AVATAR */
+.avatar-image {
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+    cursor: pointer; /* Añadimos un cursor para indicar que es interactivo */
+}
+
+/* Bloque de ÍCONOS SOCIALES */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover img {
+    opacity: 1;
+}
+
+/* === SECCIÓN INTERACTIVA DE RECTÁNGULOS === */
+
+/* === SECCIÓN INTERACTIVA DE TARJETAS DE DETALLES === */
+
+/* Estilo para la nueva sección que contiene las tarjetas */
+#details-section {
+  width: 100%;
+  max-width: 520px; /* Mismo ancho que la tarjeta principal para consistencia */
+  margin-top: 20px;   /* Espacio entre la tarjeta principal y esta sección */
+  
+  /* Estilos para la animación de aparición */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Clase que se añade con JS para mostrar la sección */
+#details-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* El contenedor de los rectángulos ahora es más simple */
+.info-rectangles {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/* El estilo de .info-box y la animación se mantienen igual */
+.info-box {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 130px;
+  max-width: 150px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+/* Colores específicos para cada tipo de información */
+.info-box.personal { background-color: #2ecc71; }
+.info-box.profesional { background-color: #f39c12; }
+.info-box.objetivos { background-color: #e74c3c; }
+
+/* --- Animación --- */
+.scale-up-center {
+  animation: scale-up-center 4.6s cubic-bezier(1.390, 1.575, 0.565, 1.000) forwards;
+}
+@keyframes scale-up-center {
+  0% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
