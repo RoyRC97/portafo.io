@@ -93,6 +93,44 @@ h1 {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}/* ================================================ */
+/* === CÓDIGO PARA EL EFECTO HOVER DEL AVATAR === */
+/* ================================================ */
+
+/* 1. Preparamos el contenedor del avatar como un "ancla" */
+.avatar-interactive-area {
+    position: relative; /* Esto es crucial para posicionar el texto de contacto */
+}
+
+/* 2. Estilos para la información de contacto (estado oculto) */
+.avatar-interactive-area .contact-info {
+    position: absolute; /* Lo sacamos del flujo normal */
+    top: 50%;           /* Lo centramos verticalmente */
+    left: 110%;         /* Lo colocamos a la derecha de la imagen */
+    transform: translateY(-50%); /* Ajuste fino para el centrado vertical */
+    
+    /* Propiedades para ocultarlo por defecto */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Evita que se pueda interactuar con él cuando está oculto */
+    
+    /* Estilos visuales */
+    background-color: #14e9f0d4;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: nowrap; /* Evita que el texto se parta en varias líneas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    /* La transición suave */
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* 3. El efecto HOVER: se activa al pasar el mouse sobre el área del avatar */
+.avatar-interactive-area:hover .contact-info {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Permite interactuar de nuevo */
 }
 
 /* El contenedor de los rectángulos ahora es más simple */
