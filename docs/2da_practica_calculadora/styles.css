@@ -1,0 +1,93 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: #e5f724;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculadora-grid {
+    display: grid;
+    /* Ajustamos las filas para que la primera sea la imagen */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto repeat(5, 1fr); /* 1 fila 'auto' para imagen, 1 para display, 5 para botones */
+    gap: 15px;
+    width: 100%;
+    max-width: 320px;
+    background-color: #222; /* Un fondo oscuro para toda la calculadora */
+    border-radius: 20px; /* Bordes redondeados para la calculadora entera */
+    padding: 15px; /* Espacio interno */
+}
+
+/* ESTILO ACTUALIZADO PARA EL CONTENEDOR DE LA IMAGEN */
+.image-container {
+    grid-column: 1 / -1; /* Ocupa toda la primera fila */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px; /* Espacio debajo de la imagen */
+}
+
+.image-container img {
+    width: 1000px; /* Ancho fijo para la imagen */
+    height: 100px; /* Alto fijo para la imagen */
+    /* Quitamos border-radius: 50%; para que sea cuadrada */
+    border-radius: 10px; /* Pequeños bordes redondeados, pero sigue siendo cuadrada */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border: 2px solid #FEA00A; /* Un pequeño borde naranja */
+}
+/* FIN DEL ESTILO ACTUALIZADO */
+
+.output {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    font-size: 2.5rem;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 80px;
+    border-radius: 10px; /* Bordes redondeados para la pantalla */
+    margin-bottom: 15px; /* Espacio debajo de la pantalla */
+}
+
+.btn {
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: #da5f5f;
+    color: white;
+    aspect-ratio: 1 / 1; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: #444;
+}
+
+.light-grey {
+    background-color: #A5A5A5;
+    color: black;
+}
+
+.light-grey:hover {
+    background-color: #B5B5B5;
+}
+
+.orange-op {
+    background-color: #FEA00A;
+}
+
+.orange-op:hover {
+    background-color: #FFB02A;
+}

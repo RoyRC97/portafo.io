@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+
+ 
+</div>
+<div id="conversor">
+    <div class="container">
+<div class="divC">
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo UNIVAC" class="logo">
+        <div class="note">
+            <p>Rodrigo Rios Contreras</p>
+            <p> Versión 3.0</p>
+            <p> Univac</p>
+        </div>
+    </div>
+                <!-- Valor de entrada -->
+                 
+                    <input type="number" id="valorInput" placeholder="Ingresa un valor">
+                
+
+                <!-- Radios -->
+                <br>
+                <input type="radio" name="tipo" value="divisas" checked> Divisas 
+                <br>
+                <input type="radio" name="tipo" value="unidades"> Unidades
+                <br>
+                <input type="radio" name="tipo" value="binario"> Decimal a Binario
+                <br><br>
+
+                    <!-- Selects (de y a) -->
+                    <select id="selectDe"></select>
+                    <span> a </span>
+                    <select id="selectA"></select>
+
+                    <br><br>
+                    <!-- Resultado -->
+                    <input type="text" id="resultadoInput" placeholder="Resultado" readonly>
+
+                    <br><br>
+                    <!-- Botón -->
+                    <button id="convertirBtn">Convertir</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

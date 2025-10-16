@@ -1,0 +1,195 @@
+/* ===== Variables de Color (para cambiar el tema fácilmente) ===== */
+:root {
+    --color-primario: #007bff; /* Un azul moderno y agradable */
+    --color-primario-hover: #0056b3;
+    --color-fondo: #f4f7f6;
+    --color-tarjeta: #ffffff;
+    --color-texto: #333333;
+    --color-borde: #cccccc;
+    --sombra-tarjeta: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Estilos Generales y del Body ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    /* Usamos Flexbox para centrar el contenido principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura */
+}
+
+/* ===== Contenedor Principal del Conversor (la "tarjeta") ===== */
+.divC {
+    background-color: var(--color-tarjeta);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-tarjeta);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para que no se estire demasiado */
+    text-align: center;
+}
+
+/* ===== Header y Logo ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espacio entre logo y texto */
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* ===== Estilos para Inputs, Selects y Botones ===== */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al seleccionar un campo */
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ===== Botón Principal de Acción ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primario);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--color-primario-hover);
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+/* ===== Estilos para el Tooltip (ayuda contextual) ===== */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    opacity: 0;
+    width: 180px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+}
+
+/* Flecha para el tooltip */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* A la izquierda del tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #333 transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* ===== Efecto Mouseover para el Logo Superior ===== */
+
+/* Primero, preparamos el logo para una transición suave */
+.main-header .logo {
+    transition: transform 0.3s ease; /* Animación suave de 0.3 segundos */
+}
+
+/* Ahora, definimos lo que pasa al pasar el mouse por encima */
+.main-header .logo:hover {
+    transform: scale(1.08); /* Aumenta el tamaño del logo en un 8% */
+    cursor: pointer;          /* El cursor cambia a una manita para indicar que es interactivo */
+}
+/* ===== Nota tipo Post-it al lado del logo ===== */
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-container .logo {
+    display: block;
+    position: relative;
+    z-index: 2; /* Logo encima */
+    width: 220px;  /* Ajusta si tu imagen es más grande */
+    height: 250px; /* Ajusta si tu imagen es más grande */
+}
+
+/* Nota escondida detrás del logo */
+.note {
+    position: absolute;
+    top: 0;
+    left: 100%; /* pegada al borde derecho del logo */
+    background-color: yellow;
+    border: 5px solid #333; /* Borde oscuro para que resalte */
+    padding: 25px;
+    border-radius: 6px 0 0 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    
+    /*para centrar el texto verticalmente*/
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* Espacio entre las líneas o salto de lineas xD*/
+    justify-content: center;
+
+
+
+    /* Altura igual al logo */
+    height: 30%;
+    display: flex;
+    align-items: center;
+
+    /* Estado inicial: se ve solo un pedacito (20px aprox.) */
+    transform: translateX(-200px); /*para moverlo a la izquierda y ocultarla*/
+    transition: transform 0.8s ease; /*lo que tarda la transicion*/
+    z-index: 1; /* detrás del logo */
+}
+
+/* Cuando pasas el cursor, se despliega */
+.logo-container:hover .note {
+    transform: translateX(0);
+}

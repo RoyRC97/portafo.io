@@ -130,3 +130,47 @@ h1 {
   0% { transform: scale(1.5); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
+/* ========================================= */
+/* === ESTILOS PARA LA PÁGINA DE TRABAJOS === */
+/* ========================================= */
+
+/* Estilos para el cuerpo de la página de trabajos */
+.body-trabajos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+/* Contenedor principal de la lista de trabajos */
+.trabajos-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+/* Estilo para los enlaces (botones) dentro del contenedor de trabajos */
+.trabajos-container a {
+    display: block;
+    background-color: #2ecc71; /* Un color verde para diferenciar */
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 15px; /* Espacio entre los botones */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.trabajos-container a:hover {
+    background-color: #27ae60; /* Un verde más oscuro */
+    transform: scale(1.03); /* Un ligero efecto de crecimiento */
+}
